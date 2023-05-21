@@ -1,0 +1,33 @@
+<h2 [style.color]="colorName">Welcome Home {{name | lowercase}}</h2>
+
+<button (click)="showStatus()">Show Status</button>
+
+<input  #txt (change)="changeinput(txt.value)">
+
+<input [(ngModel)]="inputMod">
+
+<input *ngIf="checkboxValues[0]" [(ngModel)]="colorName">
+
+<div>
+    <label></label>
+    <div>
+        <label>
+          <input type="checkbox" [(ngModel)]="checkboxValues[0]">
+         Need Color Change Option 
+        </label>
+      </div>
+      <div>
+        <label>
+          <input type="checkbox" [(ngModel)]="checkboxValues[1]">
+        some other option
+        </label>
+      </div>
+      
+      
+</div>
+
+<input [(ngModel)]="nameToAdd">
+<button (click)="AddNameTolist()">Add</button>
+<ul>
+    <li *ngFor="let i of nameList">{{i}}</li>
+</ul>
