@@ -8,6 +8,9 @@ import { AboutComponent } from './about/about.component';
 import { InfoComponent } from './info/info.component';
 import { StatusComponent } from './status/status.component';
 
+import { APP_BASE_HREF } from '@angular/common';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +23,9 @@ import { StatusComponent } from './status/status.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    { provide: APP_BASE_HREF, useValue: '/my-app' }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
