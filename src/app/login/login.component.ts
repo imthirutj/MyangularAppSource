@@ -13,8 +13,11 @@ import { Router, RouterModule } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-
+  
+  
   constructor(private service: UserService,private route:Router) { }
+ 
+ 
   response:any;
   LoginProcess(data: any) {
     if (data) {
@@ -40,6 +43,12 @@ export class LoginComponent {
       );
     }
   }
+
+  NavigateToRegister(){
+    this.route.navigate(['access/register']);
+  }
   
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    localStorage.removeItem('token');
+  }
 }

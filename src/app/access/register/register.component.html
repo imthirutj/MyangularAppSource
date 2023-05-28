@@ -1,1 +1,27 @@
-<p>register works!</p>
+<mat-card>
+    <mat-card-title>Register</mat-card-title><br>
+    <mat-card-content>
+        <form class="example-form" [formGroup]="reactiveform" (ngSubmit)="RegisterProcess()">
+            <mat-form-field class="example-full-width">
+                <mat-label>user name</mat-label>
+                <input required ngModel matInput placeholder="Please enter username" formControlName="username" value="imthirutj">
+            </mat-form-field>
+            <br>
+            <mat-form-field class="example-full-width">
+                <mat-label>Password</mat-label>
+                <input required ngModel matInput placeholder="Please enter password" formControlName="password" type="password">
+            </mat-form-field>
+            <br>
+            <mat-form-field class="example-full-width">
+                <mat-label>Name</mat-label>
+                <input required ngModel matInput placeholder="Please enter Name" formControlName="name" type="text">
+            </mat-form-field>
+            <div>
+                
+                <button type="submit" mat-raised-button color="primary">Register</button>
+                <a routerLink="access/register" mat-raised-button color="accent" (click)="NavigateToLogin()">Login</a>
+            </div>
+        </form>
+       
+    </mat-card-content>
+</mat-card>

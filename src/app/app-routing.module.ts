@@ -4,17 +4,18 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { InfoComponent } from './info/info.component';
 import { StatusComponent } from './status/status.component';
+import { AuthGuard } from './Guard/auth.guard';
 
 const routes: Routes = [
-  { path: "home", component: HomeComponent },
+  { path: "home", component: HomeComponent,canActivate:[AuthGuard] },
   {
     path: "about", component: AboutComponent,
     children: [
       {
-        path: "addInfo", component: InfoComponent
+        path: "addInfo", component: InfoComponent,canActivate:[AuthGuard] 
       },
       {
-        path: "editInfo/:id", component: InfoComponent
+        path: "editInfo/:id", component: InfoComponent,canActivate:[AuthGuard] 
       }]
   },
   {

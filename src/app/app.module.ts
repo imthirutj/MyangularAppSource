@@ -14,6 +14,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {HttpClientModule} from "@angular/common/http";
 
+import {CommonModule} from "@angular/common"
+import { MaterialModule } from 'src/mat-module';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +31,8 @@ import {HttpClientModule} from "@angular/common/http";
     AppRoutingModule,
     FormsModule, 
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    MaterialModule,
   ],
   providers: [
     { provide: APP_BASE_HREF, useValue: '/my-app' }

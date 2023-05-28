@@ -1,0 +1,25 @@
+.heart-container {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+  }
+  
+  .heart {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    transform: rotate(45deg);
+    border-radius: 50px;
+  }
+  
+  .love-message {
+    text-align: center;
+    font-size: 36px;
+    margin-top: 20px;
+    font-family: cursive;
+  }
+  

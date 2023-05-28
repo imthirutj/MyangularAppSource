@@ -14,10 +14,25 @@ export class UserService {
   }
 
   LoginProcess(inputData:any){
-    const params = new HttpParams()
-    .set('username', inputData.username)
-    .set('password', inputData.password);
+    var payload = {
+      email: inputData.username,
+      password: inputData.password
+    };
     
-    return this.http.get('https://localhost:7101/api/employees/loginReturnTok',{params})
+    return this.http.post('https://node-management.onrender.com/login',payload)
   }
+
+  RegisterProcess(inputData:any){
+   
+    return this.http.post('https://node-management.onrender.com/register',inputData)
+  }
+
+  isLoggedIn(){
+    return localStorage.getItem('token') !=null;
+  }
+
+  GetToken(): string {
+    return localStorage.getItem('token') || '';
+  }
+  
 }
